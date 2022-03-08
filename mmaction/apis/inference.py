@@ -136,6 +136,7 @@ def inference_recognizer(model,
             start_index=start_index,
             modality='RGB')
     data = test_pipeline(data)
+    data3 = data
     data = collate([data], samples_per_gpu=1)
     data2 = data
     if next(model.parameters()).is_cuda:
@@ -154,4 +155,4 @@ def inference_recognizer(model,
     top5_label = score_sorted[:5]
     if outputs:
         return top5_label, returned_features
-    return top5_label, data2
+    return top5_label, data2, data3
