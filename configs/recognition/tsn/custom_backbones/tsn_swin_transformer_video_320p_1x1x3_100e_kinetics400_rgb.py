@@ -17,7 +17,7 @@ model = dict(
         init_std=0.01),
     # model training and testing settings
     train_cfg=None,
-    test_cfg=dict(average_clips=None, self_testing_views = 4))
+    test_cfg=dict(average_clips=None, self_testing_views = 4, max_testing_views = 4))
 
 # dataset settings
 dataset_type = 'VideoDataset'
